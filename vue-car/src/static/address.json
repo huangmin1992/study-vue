@@ -1,0 +1,39 @@
+{
+	"status":0,
+	"messaga":"",
+	"result":[
+		{
+			"addressId":"1001",
+			"userName":"jakcs",
+			"streetName":"绵阳市涪城区御营坝",
+			"postCode":"10001",
+			"tel":"1235645551",
+			"isDefalut":true
+		},
+		{
+			"addressId":"1002",
+			"userName":"jakcs",
+			"streetName":"绵阳市涪城区御营坝",
+			"postCode":"10001",
+			"tel":"1235645551",
+			"isDefalut":false
+		},
+		{
+			"addressId":"1003",
+			"userName":"jakcs",
+			"streetName":"绵阳市涪城区御营坝",
+			"postCode":"10001",
+			"tel":"1235645551",
+			"isDefalut":false
+		},
+		{
+			"addressId":"1004",
+			"userName":"jakcs",
+			"streetName":"绵阳市涪城区御营坝",
+			"postCode":"10001",
+			"tel":"1235645551",
+			"isDefalut":false
+		}
+
+	]
+}
