@@ -1,0 +1,149 @@
+{
+  "list": [
+{
+	"goodsid":1,
+	"name":"珍珠米",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":2,
+	"name":"大米",
+	"format":"10斤/袋",
+	"number":3,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":3,
+	"name":"小米",
+	"format":"10斤/袋",
+	"number":5,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":4,
+	"name":"中米",
+	"format":"10斤/袋",
+	"number":8,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":5,
+	"name":"白米",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":6,
+	"name":"黑米",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":7,
+	"name":"洗衣粉",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":8,
+	"name":"洗洁精",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":2,
+	"name":"大米",
+	"format":"10斤/袋",
+	"number":3,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":9,
+	"name":"哈哈",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":10,
+	"skuid":1,
+	"name":"游戏机",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":2,
+	"name":"大米",
+	"format":"10斤/袋",
+	"number":3,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":2,
+	"name":"大米",
+	"format":"10斤/袋",
+	"number":3,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":11,
+	"name":"英雄联盟",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":2,
+	"name":"大米",
+	"format":"10斤/袋",
+	"number":3,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+},
+{
+	"goodsid":12,
+	"name":"王者农药",
+	"format":"10斤/袋",
+	"number":10,
+	"img":"../img/1.jpg",
+	"checked":false,
+	"allocationNum":0
+}
+]
+}
