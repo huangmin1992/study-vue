@@ -7,6 +7,8 @@ import Goods from '@/components/goods/goods'
 import Ratings from '@/components/ratings/ratings'
 import Seller from '@/components/sellers/seller'
 
+
+
 if(!window.Promise){
     window.Promise = Promise;
 }

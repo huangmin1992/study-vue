@@ -1,6 +1,6 @@
 <template>
 	<transition name='model'>
-		<div class="model-mask">
+		<div class="model-mask header-mask">
 			<div class="model-wrapper">
 				<div class="model-content">
 					<div class="model-name">{{modelInfo.name}}</div>

@@ -52,7 +52,6 @@
 						el.style.transform = `translate3d(0,0,0)`
 						let inner = el.getElementsByClassName('ball')[0];
 							inner.style.transform=`translate3d(0,0,0)`;
-							console.log(inner,el)
 					},100)
 				})
 				done()
@@ -65,11 +64,6 @@
 						el.style.display="none"
 					},500)
 				}
-			}
-		},
-		watch:{
-			ballsTarget(){
-				console.log(1)
 			}
 		}
 	}

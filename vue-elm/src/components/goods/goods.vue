@@ -17,31 +17,33 @@
   				<div class="goods-listbox goods-list-hook" v-for='items in goodsList'>
   					<div class="goods-title">{{items.name}}</div>
   					<div class="goods-list" v-for='item in items.foods'>
-  						<div class="goods-box">
-  							<div class="goods-img">
-  								<img :src="item.icon" alt="">
-  							</div>
-  							<div class="goods-txtbox">
-  								<h4>{{item.name}}</h4>
-  								<p class="goods-desc goods-smallname" v-if="item.description">{{item.description}}</p>
-  								<p class="goods-desc">
-  									<span class="goods-number">月售{{item.sellCount}}份</span>
-  									<span>好评率{{item.rating}}%</span>
-  								</p>
-  								<div class="goods-price">
-  									<span class="price-now">￥{{item.price}}</span>
-  									<span class="price-old" v-show="item.oldPrice">￥{{item.oldPrice}}</span>
-  								</div>
-  							</div>
-                <car-controll :food='item' @handleAdd='handleAdd(item,$event)' @handleDecrease="handleDecrease(item)"></car-controll>
+  						<div class="goods-box" @click="handleFoodInfo(item)">
+    							<div class="goods-img">
+    								<img :src="item.icon" alt="">
+    							</div>
+    							<div class="goods-txtbox">
+    								<h4>{{item.name}}</h4>
+    								<p class="goods-desc goods-smallname" v-if="item.description">{{item.description}}</p>
+    								<p class="goods-desc">
+    									<span class="goods-number">月售{{item.sellCount}}份</span>
+    									<span>好评率{{item.rating}}%</span>
+    								</p>
+    								<div class="goods-price">
+    									<span class="price-now">￥{{item.price}}</span>
+    									<span class="price-old" v-show="item.oldPrice">￥{{item.oldPrice}}</span>
+    								</div>
+    							</div>
               </div>
+              <car-controll :food='item' @handleAdd='handleAdd(item,$event)' @handleDecrease="handleDecrease(item)"></car-controll>
   					</div>
   				</div>
   			</div>
   		</div>
     </div>
-    <shop-cart :seller="seller" :selectedFoods='selectedFoods'></shop-cart>
+    <shop-cart :seller="seller" :selectedFoods='selectedFoods' @handleModel="handleModel"></shop-cart>
     <ball-item :ballsTarget="ballsTarget" :ballsBool="ballsBool"></ball-item>
+    <cart-model v-if="cartModelShow" :selectedFoods="selectedFoods" :handleAdd="handleAdd" :handleDecrease="handleDecrease" @modelHidden="modelHidden" @clearSelectFoods="clearSelectFoods"></cart-model>
+    <food-item :selectFood="selectFood" v-if="showFlag" :handleAdd="handleAdd" :handleDecrease="handleDecrease" @handleBack="handleBack"></food-item>
   </div>
 </template>
 <script>
@@ -51,8 +53,11 @@ require('isomorphic-fetch');
 import BScroll from 'better-scroll';
 
 import ShopCart from '../shopcart/shopcart';
+import CartModel from '../shopcart/cartModel';
 import CarControll from '../cartControll/carControll';
 import Balls from '../balls/balls';
+import FoodInfo from "@/components/foodInfo/foodInfo"
+
 
 export default {
   name: 'goods',
@@ -84,13 +89,18 @@ export default {
           {
             show:false
           }
-        ]
+        ],
+      cartModelShow:false,
+      showFlag:false,
+      selectFood:{}
     }
   },
   components:{
     'shop-cart':ShopCart,
     'car-controll':CarControll,
-    'ball-item':Balls
+    'ball-item':Balls,
+    'cart-model':CartModel,
+    'food-item':FoodInfo
   },
   computed:{
     currentIndex(){
@@ -183,6 +193,40 @@ export default {
       if(item.count){
         item.count--;
       }
+      if(this.selectedFoods.length<=0){
+        this.cartModelShow = false
+        document.documentElement.style.overflow="auto";
+      }
+    },
+    handleModel(){
+      if(this.selectedFoods.length>0){
+        this.cartModelShow = true
+        document.documentElement.style.overflow="hidden";
+      }
+    },
+    modelHidden(){
+      this.cartModelShow = false;
+      document.documentElement.style.overflow="auto";
+    },
+    clearSelectFoods(){
+      this.goodsList.forEach((item)=>{
+        item.foods.forEach((food)=>{
+          if(food.count>0){
+            food.count=0
+          }
+        })
+      })
+      this.cartModelShow = false;
+      document.documentElement.style.overflow="auto";
+    },
+    handleFoodInfo(item){
+      this.selectFood = item;
+      this.showFlag = true;
+      document.documentElement.style.overflow="hidden"
+    },
+    handleBack(){
+      this.showFlag = false;
+      document.documentElement.style.overflow="auto"
     }
   }
 }

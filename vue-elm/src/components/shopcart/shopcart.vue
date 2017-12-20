@@ -1,5 +1,5 @@
 <template>
-	<div class="shop-cart">
+	<div class="shop-cart" @click="handleModel">
 		<div class="shop-content">
 			<div class="shop-left">
 				<div class="shop-circle">
@@ -26,18 +26,18 @@
 export default{
 	name:'shopcart',
 	props:{
-		'seller':{
-	      type:Object,
-	      default:{}
-	    },
 	    'selectedFoods':{
 	    	type:Array,
 	    	default:[]
+	    },
+	    'seller':{
+	    	type:Object,
+	    	default:{}
 	    }
 	},
 	data(){
 		return{
-			payFlag:false
+			payFlag:false,
 		}
 	},
 	computed:{
@@ -67,6 +67,11 @@ export default{
 				this.payFlag = true;
 				return '去结算'
 			}
+		}
+	},
+	methods:{
+		handleModel(){
+			this.$emit('handleModel')
 		}
 	}
 }
